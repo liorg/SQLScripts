@@ -1,4 +1,5 @@
-﻿CREATE PROC [dbo].[GetRecordIdAndCountWhenMatchByOrderAndEntityName]
+﻿--Search matching fields in the order
+CREATE PROC [dbo].[SearchMatchingFieldsInOrder]
 (
     @recordid uniqueidentifier out,
 	@fname nvarchar(max)= null,
@@ -16,7 +17,7 @@ BEGIN
 	
     select TOP 1 @DupKey_FLT=DupKey_FLT ,
                @DupKey_FLE=DupKey_FLE 
-             from dbo.GetAllKindsOfUniqueKey(@Fname,@Lname,@telephone,@email);
+             from dbo.GetAllKindsOfUniqueKey(@Fname,@Lname, @telephone,@email);
                
    SET @recordid=cast(cast(0 as binary) as uniqueidentifier);     
 --     ORDER WICH BEST CHoice to less Choice
