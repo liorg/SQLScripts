@@ -68,5 +68,6 @@
     <Build Include="dbo\Functions\GetAllKindsOfUniqueKey.sql" />
     <Build Include="dbo\Stored Procedures\gs_FindRowByKeyTypeAndUniqueHashKey.sql" />
     <Build Include="dbo\Stored Procedures\SearchMatchingFieldsInOrder.sql" />
+    <Build Include="dbo\Stored Procedures\gs_UpdateUniqueHashKey.sql" />
   </ItemGroup>
 </Project>
