@@ -67,7 +67,9 @@
     <Build Include="dbo\Functions\GetUniqueKey.sql" />
     <Build Include="dbo\Functions\GetAllKindsOfUniqueKey.sql" />
     <Build Include="dbo\Stored Procedures\gs_FindRowByKeyTypeAndUniqueHashKey.sql" />
-    <Build Include="dbo\Stored Procedures\SearchMatchingFieldsInOrder.sql" />
-    <Build Include="dbo\Stored Procedures\gs_UpdateUniqueHashKey.sql" />
+    <Build Include="dbo\Functions\TrimAndLowerCase.sql" />
+    <Build Include="dbo\Functions\fnNullIfEmptyGuid.sql" />
+    <Build Include="dbo\Stored Procedures\SearchMatchingKeyInOrder.sql" />
+    <Build Include="dbo\Stored Procedures\gs_updatestudent.sql" />
   </ItemGroup>
 </Project>

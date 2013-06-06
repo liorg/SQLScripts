@@ -1,25 +1,14 @@
-﻿--Search matching fields in the order
-CREATE PROC [dbo].[SearchMatchingFieldsInOrder]
+﻿CREATE PROC [dbo].[SearchMatchingKeyInOrder]
 (
     @recordid uniqueidentifier out,
-	@fname nvarchar(max)= null,
-	@lname nvarchar(max)= null,
-	@telephone nvarchar(max)= null,
-	@email nvarchar(max)= null
+	@DupKey_FLE int,
+	@DupKey_FLT int
 )
 AS
 BEGIN
-	DECLARE		@recordIdOUT uniqueidentifier,
-				@DupKey_FLT int,
-				@DupKey_FLE int;
-	
-	set @recordid=null;
-	
-    select TOP 1 @DupKey_FLT=DupKey_FLT ,
-               @DupKey_FLE=DupKey_FLE 
-             from dbo.GetAllKindsOfUniqueKey(@Fname,@Lname, @telephone,@email);
-               
-   SET @recordid=cast(cast(0 as binary) as uniqueidentifier);     
+	DECLARE		@recordIdOUT uniqueidentifier;
+	SET @recordid=cast(cast(0 as binary) as uniqueidentifier); 
+       
 --     ORDER WICH BEST CHoice to less Choice
 --		1. Match To Primary Email, First Name, Last Name
 --		2. Match To Mobile Phone, First Name, Last Name

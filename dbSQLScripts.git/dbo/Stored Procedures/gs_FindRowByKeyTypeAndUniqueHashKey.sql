@@ -14,7 +14,7 @@ BEGIN
 	  end
 	
     	SELECT @sSQL = N'SELECT @recordIdOUT = MIN(CAST(id AS BINARY(16))) FROM [dbo].tblStudent cb
-	                       where  cb.statecode=0 and '+@duplicateKeyType+'=@key';   
+	                       where  '+@duplicateKeyType+'=@key';   
   
     SET @ParmDefinition = N'@key varbinary(100) ,@recordIdOUT uniqueidentifier OUTPUT'; 
     
